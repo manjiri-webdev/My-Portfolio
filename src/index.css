@@ -1,0 +1,144 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+    --font-heading-name: 'Space Grotesk';
+    --font-body-name: 'Inter';
+    --font-heading: 'Space Grotesk', sans-serif;
+    --font-body: 'Inter', sans-serif;
+    --letter-spacing-heading: -0.5px;
+    --letter-spacing-body: 0px;
+    --space-base: 1rem;
+    --radius-small: 0.5rem;
+    --radius-large: 1rem;
+    --border-width: 1px;
+    --shadow-color: 0 0 0;
+    --shadow-offset-x: 0px;
+    --shadow-offset-y: 10px;
+    --shadow-blur: 30px;
+    --shadow-spread: -10px;
+    --shadow-opacity: 0.5;
+    --shadow-custom: 0px 10px 30px -10px rgba(0, 0, 0, 0.5);
+    --shadow-custom-hover: 0px 20px 40px -10px rgba(0, 0, 0, 0.7);
+}
+
+::-webkit-scrollbar {
+    width: 6px;
+}
+
+::-webkit-scrollbar-track {
+    background: #0a0a0f;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #2a2a3a;
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #3a3a4a;
+}
+
+.skill-bar {
+    transition: width 1.2s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.project-card:hover .video-preview {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.video-preview {
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.4s ease;
+}
+
+.modal-backdrop {
+    animation: fadeIn 0.2s ease forwards;
+}
+
+.modal-content {
+    animation: scaleIn 0.28s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+.modal-backdrop.closing {
+    animation: fadeIn 0.18s ease reverse forwards;
+}
+
+.modal-backdrop.closing .modal-content {
+    animation: scaleIn 0.18s cubic-bezier(0.22, 1, 0.36, 1) reverse forwards;
+}
+
+.nav-link {
+    position: relative;
+}
+
+.nav-link.active {
+    color: white;
+}
+
+.nav-link.active::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: rgba(255, 255, 255, 0.07);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: var(--radius-small);
+    pointer-events: none;
+}
+
+.form-input {
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: white;
+    border-radius: var(--radius-small);
+    transition: border-color 0.2s, background 0.2s;
+    outline: none;
+}
+
+.form-input:focus {
+    border-color: rgba(139, 92, 246, 0.5);
+    background: rgba(139, 92, 246, 0.05);
+}
+
+.form-input::placeholder {
+    color: rgba(148, 163, 184, 0.5);
+}
+
+@keyframes float {
+
+    0%,
+    100% {
+        transform: translateY(0px);
+    }
+
+    50% {
+        transform: translateY(-8px);
+    }
+}
+
+.float-anim {
+    animation: float 4s ease-in-out infinite;
+}
+
+@keyframes scrollBounce {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(6px);
+    }
+}
+
+.scroll-bounce {
+    animation: scrollBounce 1.4s ease-in-out infinite;
+}
+
+html {
+    scroll-behavior: smooth;
+}
