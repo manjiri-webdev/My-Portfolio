@@ -17,7 +17,7 @@ const About = () => {
     ];
 
     return (
-        <section id="about" className="py-24 px-5 sm:px-8 max-w-6xl mx-auto w-full max-h-[1400px]">
+        <section id="about" className="py-24 px-5 sm:px-8 max-w-6xl mx-auto w-full">
 
             <div className="mb-16">
                 <div className="flex items-center gap-3 mb-4">
